@@ -1,0 +1,19 @@
+EXAMPLE 1
+
+"Script is to install git on CentOS and Ubuntu machines"
+
+#!/bin/bash
+
+echo "Script is to install git on CentOS and Ubuntu machines"
+
+if grep -i ubuntu /etc/os-release; then
+    echo "This is Ubuntu. Installing git."
+    sudo apt update -y
+    sudo apt install git -y
+elif grep -i centos /etc/os-release; then
+    echo "This is CentOS. Installing git."
+    sudo yum update -y
+    sudo yum install git -y
+else
+    echo "The OS is neither Ubuntu nor CentOS."
+fi
